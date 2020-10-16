@@ -62,7 +62,7 @@ def update_score(score,high_score):
 pygame.init()
 screen = pygame.display.set_mode((400,330))#pixels for display screen
 clock = pygame.time.Clock() #this clock is used for limiting our FPS
-game_font = pygame.font.Font('F:/flappy bird/gallery/Kelson/TTF/KelsonSans-Bold.ttf',30)
+game_font = pygame.font.Font('./KelsonSans-Bold.ttf',30)
 
 
 #Game variables
@@ -73,31 +73,31 @@ score = 0
 high_score = 0
 
 
-bg_surface = pygame.image.load('F:/flappy bird/gallery/sprites/background.jpg').convert()
+bg_surface = pygame.image.load('./background.jpg').convert()
 bg_surface = pygame.transform.scale2x(bg_surface)
 
-floor_surface = pygame.image.load('F:/flappy bird/gallery/sprites/base.png').convert()
+floor_surface = pygame.image.load('./base.png').convert()
 floor_surface = pygame.transform.scale2x(floor_surface)
 floor_x_pos = 0
 
-bird_surface = pygame.image.load('F:/flappy bird/gallery/sprites/bird.png').convert_alpha()
+bird_surface = pygame.image.load('./bird.png').convert_alpha()
 #bird_surface = pygame.transform.scale2x(bird_surface)
 bird_rect = bird_surface.get_rect(center=(30,115))
 
-pipe_surface = pygame.image.load('F:/flappy bird/gallery/sprites/bpipe.png').convert()
+pipe_surface = pygame.image.load('./bpipe.png').convert()
 #pipe_surface = pygame.transform.scale2x(pipe_surface)
 pipe_list = []
 SPAWNPIPE = pygame.USEREVENT
 pygame.time.set_timer(SPAWNPIPE,1200)#timer for pipes in ms
 pipe_height = [100,120,150,250,20,50,300,405]
 
-game_over_surface =( pygame.image.load('F:/flappy bird/gallery/sprites/game over.png').convert_alpha())
+game_over_surface =( pygame.image.load('./game over.png').convert_alpha())
 game_over_rect = game_over_surface.get_rect(center =( 200,165))
 
 #SOUNDS
-flap_sound = pygame.mixer.Sound('F:/flappy bird/gallery/audio/swoosh.wav')
-death_sound = pygame.mixer.Sound('F:/flappy bird/gallery/audio/hit.wav')
-score_sound = pygame.mixer.Sound('F:/flappy bird/gallery/audio/point.wav')
+flap_sound = pygame.mixer.Sound('./swoosh.wav')
+death_sound = pygame.mixer.Sound('./hit.wav')
+score_sound = pygame.mixer.Sound('./point.wav')
 score_sound_countdown = 100
     
 
